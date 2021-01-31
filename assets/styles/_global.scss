@@ -1,0 +1,11 @@
+@import 'variables/variables';
+
+body {
+  font-family: $text-font;
+  font-size: $main-font-size;
+  line-height: 24px;
+  color: $charcoal-grey-color;
+  background-color: $background-color;
+  padding: 0;
+  margin: 0;
+}
