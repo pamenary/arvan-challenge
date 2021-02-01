@@ -9,16 +9,16 @@
 
       <validation-provider
         v-slot="{ errors }"
-        name="User"
+        name="Username"
         :rules="{ required: true }"
       >
         <b-form-group
-          label="user"
-          label-for="User"
+          label="Username"
+          label-for="username"
           :invalid-feedback="errors[0]"
           :state="!errors.length"
         >
-          <b-form-input id="user" v-model="form.user" name="user" />
+          <b-form-input id="user" v-model="form.username" name="username" />
         </b-form-group>
       </validation-provider>
 
@@ -64,14 +64,14 @@
       </validation-provider>
 
       <b-overlay
-        :show="loading"
+        :show="isLoading"
         rounded
         opacity="0.6"
         spinner-small
         spinner-variant="primary"
       >
         <b-button type="submit" variant="primary" block :disabled="invalid">
-          Login
+          Register
         </b-button>
       </b-overlay>
     </b-form>
@@ -86,7 +86,7 @@
 <script>
 export default {
   props: {
-    loading: {
+    isLoading: {
       type: Boolean,
       default: false,
     },
@@ -94,7 +94,7 @@ export default {
   data() {
     return {
       form: {
-        user: null,
+        username: null,
         email: null,
         password: null,
       },

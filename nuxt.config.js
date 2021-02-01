@@ -31,6 +31,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/axios',
+    '@/mixins/index.js',
     // https://vee-validate.logaretm.com/v3/guide/basics.html
     {
       src: '@/plugins/vee-validate.js',
