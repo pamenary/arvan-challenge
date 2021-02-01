@@ -51,6 +51,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://www.npmjs.com/package/nuxt-client-init-module
+    'nuxt-client-init-module',
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
@@ -58,7 +60,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://conduit.productionready.io/api',
+  },
 
   // https://github.com/nuxt-community/style-resources-module
   styleResources: {
