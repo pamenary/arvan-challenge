@@ -1,0 +1,7 @@
+.form-group {
+  &.is-invalid {
+    label {
+      color: #dc3545;
+    }
+  }
+}
