@@ -4,7 +4,7 @@ export const actions = {
     if (user) {
       user = JSON.parse(user)
       await store.dispatch('auth/setUser', user)
-      await this.$axios.get('/api/user')
+      await this.$axios.get('/user')
     }
   },
 }
