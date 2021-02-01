@@ -4,7 +4,9 @@ export const actions = {
     if (user) {
       user = JSON.parse(user)
       await store.dispatch('auth/setUser', user)
-      await this.$axios.get('/user')
+      const { data } = await this.$axios.get('/user')
+      localStorage.setItem('user', JSON.stringify(data.user))
+      store.dispatch('auth/setUser', data.user)
     }
   },
 }
