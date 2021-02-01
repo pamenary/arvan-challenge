@@ -5,12 +5,12 @@ import {
   ValidationProvider,
 } from 'vee-validate'
 import en from 'vee-validate/dist/locale/en'
-import { email, numeric, required } from 'vee-validate/dist/rules'
+import { email, min, required } from 'vee-validate/dist/rules'
 import Vue from 'vue'
 
 extend('required', required)
 extend('email', email)
-extend('numeric', numeric)
+extend('min', min)
 
 localize('en', en)
 

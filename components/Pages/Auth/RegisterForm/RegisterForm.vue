@@ -2,10 +2,25 @@
   <ValidationObserver
     ref="observer"
     v-slot="{ invalid, handleSubmit }"
-    class="login-box"
+    class="register-box"
   >
     <b-form @submit.stop.prevent="handleSubmit(onSubmit)">
-      <div class="title text-center">LOGIN</div>
+      <div class="title text-center">Register</div>
+
+      <validation-provider
+        v-slot="{ errors }"
+        name="User"
+        :rules="{ required: true }"
+      >
+        <b-form-group
+          label="user"
+          label-for="User"
+          :invalid-feedback="errors[0]"
+          :state="!errors.length"
+        >
+          <b-form-input id="user" v-model="form.user" name="user" />
+        </b-form-group>
+      </validation-provider>
 
       <validation-provider
         v-slot="{ errors }"
@@ -62,8 +77,8 @@
     </b-form>
 
     <div class="register-link">
-      <span> Don’t have account? </span>
-      <nuxt-link class="ml-1" to="/register"> Register Now </nuxt-link>
+      <span> Already Registered? </span>
+      <nuxt-link class="ml-1" to="/login"> Login </nuxt-link>
     </div>
   </ValidationObserver>
 </template>
@@ -79,6 +94,7 @@ export default {
   data() {
     return {
       form: {
+        user: null,
         email: null,
         password: null,
       },
@@ -93,7 +109,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.login-box {
+.register-box {
   background-color: $silver-color;
   padding: 37px 20px 19px;
   border-radius: 4px;
@@ -105,7 +121,7 @@ export default {
   .title {
     line-height: 1.19;
     font-size: 47px;
-    margin-bottom: 27px;
+    margin-bottom: 49px;
   }
   .register-link {
     margin-top: 14px;
