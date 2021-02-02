@@ -15,7 +15,6 @@ export default {
   methods: {
     $logout() {
       this.$store.dispatch('auth/logout')
-      localStorage.removeItem('user')
       this.$router.push('/login')
     },
   },
