@@ -6,6 +6,7 @@
       :items="posts"
       :fields="fields"
       :busy="isLoading"
+      class="table-posts"
     >
       <template #cell(id)="{ index }">
         {{ index + 1 }}
@@ -36,9 +37,11 @@
       </template>
 
       <template #table-busy>
-        <div class="text-center my-2">
+        <div
+          class="table-loading d-flex flex-column justify-content-center align-items-center my-2"
+        >
           <b-spinner class="align-middle"></b-spinner>
-          <strong>Loading...</strong>
+          <strong class="mt-2">Loading...</strong>
         </div>
       </template>
     </b-table>
@@ -90,7 +93,7 @@ export default {
         },
       ],
       posts: [],
-      isLoading: false,
+      isLoading: true,
       page: this.$route.params.articlesPage
         ? this.$route.params.articlesPage
         : 1,
@@ -120,5 +123,11 @@ export default {
 
 <style lang="scss" scoped>
 .all-posts {
+  .table-posts {
+    min-height: 600px;
+    .table-loading {
+      height: 520px;
+    }
+  }
 }
 </style>
