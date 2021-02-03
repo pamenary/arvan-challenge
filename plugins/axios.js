@@ -13,6 +13,13 @@ export default function (context) {
       }
 
       errorHandler(error.response.data.errors)
+
+      context.nuxtError({
+        statusCode: error.response.status,
+        message: error.message,
+      })
+
+      return Promise.resolve(false)
     })
   }
 }

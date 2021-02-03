@@ -56,6 +56,12 @@
       align="center"
       @change="onChangePage"
     />
+
+    <DeleteArticleModal
+      v-model="visibleDeleteArticle"
+      :article-slug="slugSelected"
+      @delete="getList"
+    />
   </div>
 </template>
 
@@ -97,6 +103,8 @@ export default {
       page: this.$route.params.articlesPage
         ? this.$route.params.articlesPage
         : 1,
+      visibleDeleteArticle: false,
+      slugSelected: '',
     }
   },
   methods: {
@@ -116,7 +124,10 @@ export default {
     onChangePage(page) {
       this.$router.push(`/articles/page/${page}`)
     },
-    onDelete(item) {},
+    onDelete(item) {
+      this.visibleDeleteArticle = true
+      this.slugSelected = item.slug
+    },
   },
 }
 </script>
