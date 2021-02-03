@@ -17,7 +17,7 @@
       </template>
 
       <template #cell(tags)="{ item }">
-        {{ item.tagList.join(', ') }}
+        {{ item.tagList.slice(0, 2).join(', ') }}
       </template>
 
       <template #cell(createdAt)="{ item }">

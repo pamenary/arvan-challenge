@@ -92,17 +92,24 @@
 <script>
 export default {
   props: {
+    value: {
+      type: Object,
+      required: true,
+    },
     isLoading: {
       type: Boolean,
-      default: false,
+      required: true,
     },
   },
-  data() {
-    return {
-      form: {
-        tagList: [],
+  computed: {
+    form: {
+      get() {
+        return this.value
       },
-    }
+      set(val) {
+        this.$emit('input', val)
+      },
+    },
   },
   methods: {
     onSubmit() {

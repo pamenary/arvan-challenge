@@ -21,18 +21,29 @@ export default {
       isLoading: false,
     }
   },
+  mounted() {
+    this.getArticle()
+  },
   methods: {
+    async getArticle() {
+      try {
+        const slug = this.$route.params.articleSlug
+        const { data } = await this.$axios.get(`/articles/${slug}`)
+        this.form = data.article
+      } catch (error) {}
+    },
     async onSubmit(form) {
       try {
+        const slug = this.$route.params.articleSlug
         this.isLoading = true
-        await this.$axios.post('/articles', {
+        await this.$axios.put(`/articles/${slug}`, {
           article: {
             ...form,
           },
         })
         this.isLoading = false
-        this.$bvToast.toast('Well done! Article created successfuly', {
-          title: 'New Article',
+        this.$bvToast.toast('Well done! Article updated successfuly', {
+          title: 'Article updated',
           variant: 'success',
           solid: true,
         })

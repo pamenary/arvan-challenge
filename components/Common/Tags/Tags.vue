@@ -72,6 +72,16 @@ export default {
           }
         })
         this.isLoading = false
+
+        if (this.selected.length > 0) {
+          this.tags.unshift(
+            ...this.selected.map((item) => {
+              return {
+                name: item,
+              }
+            })
+          )
+        }
       } catch (error) {
         this.isLoading = false
       }
