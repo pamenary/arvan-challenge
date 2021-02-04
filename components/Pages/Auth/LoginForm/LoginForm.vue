@@ -49,7 +49,7 @@
       </validation-provider>
 
       <b-overlay
-        :show="loading"
+        :show="isLoading"
         rounded
         opacity="0.6"
         spinner-small
@@ -71,7 +71,7 @@
 <script>
 export default {
   props: {
-    loading: {
+    isLoading: {
       type: Boolean,
       default: false,
     },
