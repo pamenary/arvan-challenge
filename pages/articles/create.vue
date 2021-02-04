@@ -21,6 +21,9 @@ export default {
       isLoading: false,
     }
   },
+  head: {
+    title: 'New Article',
+  },
   methods: {
     async onSubmit(form) {
       try {

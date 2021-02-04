@@ -5,5 +5,8 @@
 <script>
 export default {
   middleware: 'authenticated',
+  head: {
+    title: 'Dashboard',
+  },
 }
 </script>

@@ -8,6 +8,9 @@
 <script>
 export default {
   middleware: 'authenticated',
+  head: {
+    title: 'All Posts',
+  },
 }
 </script>
 

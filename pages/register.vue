@@ -13,6 +13,9 @@ export default {
       isLoading: false,
     }
   },
+  head: {
+    title: 'Register',
+  },
   methods: {
     async onSubmit(form) {
       try {

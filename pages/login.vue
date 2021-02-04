@@ -13,6 +13,9 @@ export default {
       isLoading: false,
     }
   },
+  head: {
+    title: 'Login',
+  },
   methods: {
     async onSubmit(form) {
       try {

@@ -1,6 +1,6 @@
 <template>
   <div class="page-article-create">
-    <PageTitle title="New Article" />
+    <PageTitle title="Edit Article" />
     <ArticleForm
       v-model="form"
       class="mt-4"
@@ -20,6 +20,9 @@ export default {
       },
       isLoading: false,
     }
+  },
+  head: {
+    title: 'Edit Article',
   },
   mounted() {
     this.getArticle()
