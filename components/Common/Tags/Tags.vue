@@ -66,22 +66,14 @@ export default {
         this.isLoading = true
         const { data } = await this.$axios.get('/tags')
 
-        this.tags = data.tags.sort().map((item) => {
+        const uniqueTags = [...new Set([...this.selected, ...data.tags])]
+
+        this.tags = uniqueTags.sort().map((item) => {
           return {
             name: item,
           }
         })
         this.isLoading = false
-
-        if (this.selected.length > 0) {
-          this.tags.unshift(
-            ...this.selected.map((item) => {
-              return {
-                name: item,
-              }
-            })
-          )
-        }
       } catch (error) {
         this.isLoading = false
       }
