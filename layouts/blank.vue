@@ -1,7 +1,7 @@
 <template>
-  <div class="layout-blank">
+  <b-container fluid class="layout-blank">
     <Nuxt />
-  </div>
+  </b-container>
 </template>
 
 <style></style>

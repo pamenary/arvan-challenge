@@ -2,6 +2,7 @@
   <div class="all-posts">
     <b-table
       head-variant="light"
+      responsive
       hover
       :items="posts"
       :fields="fields"

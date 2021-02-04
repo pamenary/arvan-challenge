@@ -6,7 +6,7 @@
   >
     <b-form @submit.stop.prevent="handleSubmit(onSubmit)">
       <b-row>
-        <b-col cols="10">
+        <b-col sm="12" md="8" lg="9">
           <validation-provider
             v-slot="{ errors }"
             name="Title"
@@ -67,7 +67,14 @@
               />
             </b-form-group>
           </validation-provider>
+        </b-col>
+        <b-col sm="12" md="4" lg="3">
+          <Tags v-model="form.tagList" />
+        </b-col>
+      </b-row>
 
+      <b-row class="mt-3">
+        <b-col>
           <b-overlay
             :show="isLoading"
             rounded
@@ -80,9 +87,6 @@
               Submit
             </b-button>
           </b-overlay>
-        </b-col>
-        <b-col cols="2">
-          <Tags v-model="form.tagList" />
         </b-col>
       </b-row>
     </b-form>
