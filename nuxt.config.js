@@ -74,4 +74,9 @@ export default {
   eslint: {
     cache: false,
   },
+
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false,
+  },
 }
