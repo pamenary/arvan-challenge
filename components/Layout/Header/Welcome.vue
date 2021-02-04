@@ -6,7 +6,7 @@
 export default {
   computed: {
     welcome() {
-      return `Welcome ${this.$user.username}`
+      return `Welcome ${this.$user?.username}`
     },
   },
 }
