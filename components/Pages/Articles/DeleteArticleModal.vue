@@ -76,7 +76,6 @@ export default {
         })
         this.modalShow = false
         this.isLoading = false
-        console.log('ssssssssssssssssss')
         this.$emit('delete')
       } catch (error) {
         this.modalShow = false
